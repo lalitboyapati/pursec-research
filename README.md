@@ -1,5 +1,58 @@
 # PurSec paper-scraping agent
 
+## Current results and verification — October 22, 2026
+
+**The scraping prototype is working. Human validation is the next step.**
+
+| Measurement | Current result |
+|---|---:|
+| cspapers source records | 430 |
+| Unique title records / duplicates removed | 420 / 10 |
+| Matches against the extracted official research-paper list | 416 / 417 (99.76%) |
+| Unmatched collected titles / unmatched reference titles | 4 / 1 |
+| Downloaded, readable, title-matched PDFs | 3 |
+| Prepared audit | 30 random matches + 4 unmatched + 3 PDF examples |
+| Human-measured accuracy | Not measured yet |
+
+**99.76% is reference coverage, not accuracy.** The official reference still needs human scope/completeness review. Author, abstract, and PDF retrieval was limited to three records as a smoke test.
+
+### Where your data is
+
+Everything is saved locally in `runs/usenix-2024-validated/`:
+
+- **`papers.json`**: the 420 deduplicated records, source links, and collected metadata.
+- **`papers.csv`**: the same collection in a spreadsheet-friendly format.
+- **`pdfs/`**: the three PDFs. Each record's `pdf_path` identifies its file.
+- **`report.md`**: counts and coverage; `requests.json` records source provenance.
+
+From this project's terminal:
+
+```bash
+open runs/usenix-2024-validated/papers.csv
+open runs/usenix-2024-validated/pdfs
+```
+
+These run files are local and Git-ignored; cloning GitHub will not retrieve them. The committed [meeting report](docs/meeting-validation.md) and [measurement snapshot](docs/validation-summary.json) summarize this run for the team. The Quick start below explains how to collect a fresh dataset.
+
+### LLM pre-review → your human review
+
+A local `llama3.2:latest` pre-review checks the 37 selected records against saved evidence. **17 of 37 responses failed evidence checks; this model must not approve records.** It does not browse independently or certify correctness. See the [meeting report](docs/meeting-validation.md) for actual outcomes and the rejected first pass.
+
+1. Open `runs/usenix-2024-review/human-review.json` in VS Code. Compare each record against its official links; check the three PDFs directly. Fill in decisions, your name, date, and notes.
+2. Review `runs/usenix-2024-review/reference-review.json` against the complete official conference list.
+3. Run the command below to calculate audit counts and, once the random sample is fully decided, its membership-accuracy estimate and confidence interval.
+
+```bash
+source .venv/bin/activate
+python -m pursec_scraper.review summarize
+```
+
+Read [the human-verification guide](docs/human-verification.md) for exact field definitions and an editing example. Results appear in `runs/usenix-2024-review/summary.json`. Model judgments stay in `llm-review.json`, separate from your worksheet; read them after your first pass to reduce bias.
+
+**Next:** complete this pilot audit, resolve mismatches, validate a held-out conference-year, then expand collection before extracting statistical methods. This week's deliverable is the working collector plus a reproducible evaluation process.
+
+---
+
 Collect papers from **cspapers.org**, cross-check them against a conference reference, and report what is missing. Runs in Python from this VS Code project.
 
 ## Quick start

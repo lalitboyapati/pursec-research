@@ -1,0 +1,148 @@
+{
+  "collection": {
+    "started_scope": {
+      "venue": "usenix",
+      "year": 2024
+    },
+    "finished_at": "2026-10-22T06:57:25.496420+00:00",
+    "discovery": {
+      "source": "cspapers_repository",
+      "commit": "92397bd6e2418b494f37b1c102c6706050b70480",
+      "reported_total": 430,
+      "title_note": "Repository filenames replace slashes with spaces; retain official titles when matched."
+    },
+    "source_records": 430,
+    "selected_unique_records": 420,
+    "duplicate_records": 10,
+    "expected_papers": 417,
+    "reference_human_reviewed": false,
+    "reference_matches_from_discovery": 416,
+    "discovery_coverage": 0.9976019184652278,
+    "collection_reference_matches": 416,
+    "collection_coverage": 0.9976019184652278,
+    "reference_match_rate": 0.9904761904761905,
+    "pdf_title_matches": 3,
+    "pdf_coverage": 0.007194244604316547,
+    "missing_from_discovery": 1,
+    "unresolved_records": 4,
+    "warnings": [
+      "Official reference was automatically extracted; review eligibility and omissions before publication."
+    ],
+    "comparisons": [
+      {
+        "setup": "direct_cspapers",
+        "unique_records": 420,
+        "reference_matches": 416,
+        "missing": 1
+      }
+    ],
+    "configuration": {
+      "source": "repository",
+      "abstracts": true,
+      "enrich": true,
+      "download_pdfs": true,
+      "limit_enrichment": 3,
+      "proposer_count": 0,
+      "proposer_rounds": 2,
+      "recover_missing": false
+    },
+    "interpretation": "Coverage is relative to the supplied/extracted reference, not proven conference completeness. Title/venue/year matches do not independently validate authors or the final publication version. Null means unmeasured, not zero. LLM agreement is not ground truth."
+  },
+  "audit": {
+    "reference_review": {
+      "reference_complete": "pending",
+      "exclusions_correct": "pending",
+      "reviewer": "",
+      "notes": ""
+    },
+    "created_at": "2026-10-22T07:21:34.099148+00:00",
+    "sample_size": 30,
+    "human_random_sample_counts": {
+      "membership": {
+        "correct": 0,
+        "uncertain": 0,
+        "not_collected": 0,
+        "pending": 30,
+        "incorrect": 0
+      },
+      "title": {
+        "correct": 0,
+        "uncertain": 0,
+        "not_collected": 0,
+        "pending": 30,
+        "incorrect": 0
+      },
+      "year_venue": {
+        "correct": 0,
+        "uncertain": 0,
+        "not_collected": 0,
+        "pending": 30,
+        "incorrect": 0
+      },
+      "authors": {
+        "correct": 0,
+        "uncertain": 0,
+        "not_collected": 30,
+        "pending": 0,
+        "incorrect": 0
+      },
+      "pdf": {
+        "correct": 0,
+        "uncertain": 0,
+        "not_collected": 30,
+        "pending": 0,
+        "incorrect": 0
+      }
+    },
+    "human_membership_accuracy_within_automatically_matched_stratum": null,
+    "wilson_95_interval": null,
+    "human_accuracy_note": "Only a completed random sample supports this estimate; targeted problem/PDF cases are excluded. This is membership accuracy within automatically matched records, not overall metadata or PDF accuracy.",
+    "human_targeted_counts": {
+      "membership": {
+        "correct": 0,
+        "incorrect": 0,
+        "not_collected": 0,
+        "pending": 7,
+        "uncertain": 0
+      },
+      "title": {
+        "correct": 0,
+        "incorrect": 0,
+        "not_collected": 0,
+        "pending": 7,
+        "uncertain": 0
+      },
+      "year_venue": {
+        "correct": 0,
+        "incorrect": 0,
+        "not_collected": 0,
+        "pending": 7,
+        "uncertain": 0
+      },
+      "authors": {
+        "correct": 0,
+        "incorrect": 0,
+        "not_collected": 4,
+        "pending": 3,
+        "uncertain": 0
+      },
+      "pdf": {
+        "correct": 0,
+        "incorrect": 0,
+        "not_collected": 4,
+        "pending": 3,
+        "uncertain": 0
+      }
+    },
+    "targeted_records": 7,
+    "llm_model": "llama3.2:latest",
+    "llm_reviewed": 37,
+    "llm_counts": {
+      "supported": 37,
+      "conflicting": 0,
+      "insufficient_evidence": 0
+    },
+    "llm_flagged_for_evidence": 17,
+    "llm_errors": 0
+  }
+}
