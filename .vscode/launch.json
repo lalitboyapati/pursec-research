@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Scrape cspapers: USENIX 2024",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pursec_scraper",
+      "args": ["--venue", "usenix", "--year", "2024", "--source", "repository", "--official-usenix", "--output", "runs/vscode-run"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
