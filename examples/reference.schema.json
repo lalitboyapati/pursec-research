@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Human-reviewed conference reference",
+  "type": "object",
+  "required": ["venue", "year", "source_url", "papers"],
+  "properties": {
+    "venue": {"type": "string"},
+    "year": {"type": "integer"},
+    "source_url": {"type": "string", "format": "uri"},
+    "human_reviewed": {"type": "boolean"},
+    "scope": {"type": "string"},
+    "papers": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["title"],
+        "properties": {
+          "title": {"type": "string"},
+          "authors": {"type": "array", "items": {"type": "string"}},
+          "source_url": {"type": "string", "format": "uri"},
+          "pdf_url": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

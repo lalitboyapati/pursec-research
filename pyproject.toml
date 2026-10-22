@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pursec-scraper"
+version = "0.1.0"
+description = "Evidence-backed paper collection from cspapers.org"
+requires-python = ">=3.10"
+dependencies = ["pypdf>=5,<7"]
+
+[project.scripts]
+pursec-scrape = "pursec_scraper.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pursec_scraper*"]
